@@ -11,9 +11,11 @@ public class BinarySearchST<Key extends Comparable, Value> {
 
   public void put(Key key, Value val) {
     for (int i = 0; i < this.keys.size(); i++)
-      if (this.keys.get(i).compareTo(key) >= 0) {
+      if (this.keys.get(i).compareTo(key) > 0) {
         this.keys.add(i, key);
         this.values.add(i, val);
+        return;
+      } else if (this.keys.get(i).compareTo(key) == 0) {
         return;
       }
 
