@@ -16,6 +16,8 @@ public class BinarySearchST<Key extends Comparable, Value> {
         this.values.add(i, val);
         return;
       } else if (this.keys.get(i).compareTo(key) == 0) {
+        this.keys.set(i, key);
+        this.values.set(i, val);
         return;
       }
 
